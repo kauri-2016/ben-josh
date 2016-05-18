@@ -1,40 +1,62 @@
-var game = [[8, 2], [9, 1], [2, 3], [7, 2], [2, 4], [6, 2], [8, 1], [1, 2], [3, 6], [7, 2]];
+var game = [
+  [8, 2],
+  [9, 1],
+  [2, 3],
+  [7, 2],
+  [2, 4],
+  [6, 2],
+  [8, 1],
+  [1, 2],
+  [3, 6],
+  [7, 2]
+]
 
-var score = 0;
-var tenCount = 0;
-var kLoop = 0;
+var score = 0
+var tenCount = 0
+var kLoop = 0
 
 // var perfectGame = [[10], [10], [10], [6, 2]]
 // var perfectGame = [[10], [10], [10], [7, 2], [2, 4], [6, 2], [8, 1], [1, 2], [3, 6], [7, 2]];
-var perfectGame = [[10], [10], [10], [10], [10], [10], [10], [10], [10], [10]];
+var perfectGame = [
+  [10],
+  [10],
+  [10],
+  [10],
+  [10],
+  [10],
+  [10],
+  [10],
+  [10],
+  [10]
+];
 
 var tens = 0;
 var perGameScore = 0
 
-function perGameCount(perGame){
+function perGameCount(perGame) {
   var perGameCount = 0;
   // console.log(perGame)
-  for (var i = 0; i < perGame.length; i++){
+  for (var i = 0; i < perGame.length; i++) {
     if (tens === 9) {
       return console.log("perfect")
     }
     if (perGame[i].length < 2) {
-      if (perGame[i + 1].length < 2){
-        if (typeof(perGame[i + 2]) == "undefined") {
-          perGameScore += 60;
+      if (perGame[i + 1].length < 2) {
+        if (typeof perGame[i + 2] === 'undefined') {
+          perGameScore += 60
           console.log(perGameScore)
-          console.log("perfect game");
-          return perGameScore;
+          console.log('perfect game')
+          return perGameScore
         }
         if (perGame[i + 2].length < 2) {
-          perGameScore += 30;
-          tens++;
+          perGameScore += 30
+          tens++
         } else {
-          perGameScore += 20;
-          perGameScore += perGame[i + 2][0];
+          perGameScore += 20
+          perGameScore += perGame[i + 2][0]
         }
       } else {
-        perGameScore += 10;
+        perGameScore += 10
         perGameScore += perGame[i + 1][0]
         perGameScore += perGame[i + 1][1]
       }
@@ -42,12 +64,11 @@ function perGameCount(perGame){
       perGameScore += perGame[i][0]
       perGameScore += perGame[i][1]
     }
-
-    }
+  }
 
   console.log(perGameScore)
 }
-perGameCount(perfectGame);
+perGameCount(perfectGame)
 //
 //
 //
