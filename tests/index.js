@@ -39,3 +39,14 @@ test('scores a strike frame', function (t) {
   t.equals(score, 18, 'scores a strike frame')
   t.end()
 })
+
+test('scores consecutive strikes', function (t) {
+  var frame = [10]
+  var nextFrame = [10]
+  var nextNextFrame = [3, 5]
+
+  var score = game.scoreFrame(frame, nextFrame, nextNextFrame)
+
+  t.equals(score, 23, 'scores consecutive strikes')
+  t.end()
+})
