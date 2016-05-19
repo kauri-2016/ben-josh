@@ -50,3 +50,15 @@ test('scores consecutive strikes', function (t) {
   t.equals(score, 23, 'scores consecutive strikes')
   t.end()
 })
+
+test('final strike incidence', function (t) {
+  var frame = [10]
+  var nextFrame = [10]
+  var nextNextFrame = [3, 5]
+  var finalFrame = game.length[10]
+
+  var score = game.scoreFrame(frame, nextFrame, nextNextFrame, finalFrame)
+
+  t.equals(score, 23, 'final strike incidence')
+  t.end()
+})
