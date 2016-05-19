@@ -1,5 +1,6 @@
 module.exports = {
-  scoreFrame: scoreFrame
+  scoreFrame: scoreFrame,
+  scoreGame: scoreGame
 }
 
 function scoreFrame (frame, nextFrame, nextNextFrame) {
@@ -17,4 +18,12 @@ function scoreFrame (frame, nextFrame, nextNextFrame) {
   }
   // open frame
   return frame[0] + frame[1]
+}
+
+function scoreGame (frames) {
+  var total = 0;
+  for (var i = 0; i < frames.length; i++) {
+    total += scoreFrame(frames[i], frames[i + 1], frames[i + 2])
+  }
+  return total
 }

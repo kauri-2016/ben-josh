@@ -51,14 +51,13 @@ test('scores consecutive strikes', function (t) {
   t.end()
 })
 
-test('final strike incidence', function (t) {
-  var frame = [10]
-  var nextFrame = [10]
-  var nextNextFrame = [3, 5]
-  var finalFrame = game.length[10]
+test('full game', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10], [7, 2], [10], [10], [5, 2], [7, 0], [4, 4]
+  ]
 
-  var score = game.scoreFrame(frame, nextFrame, nextNextFrame, finalFrame)
+  var score = game.scoreGame(frames)
 
-  t.equals(score, 23, 'final strike incidence')
+  t.equals(score, 119, 'full game')
   t.end()
 })
