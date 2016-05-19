@@ -9,11 +9,10 @@ function scoreFrame (frame, nextFrame, nextNextFrame, tenthRound) {
     return 20 + nextNextFrame[0]
   }
   // strike
-  else if (typeof (frame[1]) === 'undefined') {
+  else if (typeof(frame[1]) === 'undefined') {
     return 10 + nextFrame[0] + nextFrame[1]
   }
   // spare
-
   else if (frame[0] + frame[1] === 10 && tenthRound === 10) {
     return 10 + frame[2]
   }
@@ -24,7 +23,7 @@ function scoreFrame (frame, nextFrame, nextNextFrame, tenthRound) {
   return frame[0] + frame[1]
 }
 
-function scoreGame (frames) {
+function scoreGame(frames) {
   var tenthRound = 1;
   var total = 0;
   for (var i = 0; i < frames.length; i++) {
