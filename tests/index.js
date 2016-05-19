@@ -61,3 +61,14 @@ test('full game', function (t) {
   t.equals(score, 119, 'full game')
   t.end()
 })
+
+test('last frame addition', function (t) {
+  var frames = [
+    [1, 2], [6, 4], [5, 4], [10], [7, 2], [10], [10], [5, 2], [7, 0], [3, 7, 4]
+  ]
+
+  var score = game.scoreGame(frames)
+
+  t.equals(score, 125, 'full game with spare to finish')
+  t.end()
+})
